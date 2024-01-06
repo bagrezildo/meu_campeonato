@@ -1,9 +1,9 @@
-<form>
+<form [formGroup]="form" (submit)="login()">
     <h1 class="h3 mb-3 fw-normal"></h1>
 
-      <input type="email" class="form-control"  placeholder="name@example.com" required>
+      <input formControlName="email" type="email" class="form-control"  placeholder="name@example.com" required>
       
-      <input type="password" class="form-control"  placeholder="Password" required>
+      <input formControlName="password" type="password" class="form-control"  placeholder="Password" required>
       
     <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
   </form>

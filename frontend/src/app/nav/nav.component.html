@@ -3,15 +3,25 @@
       <a class="navbar-brand" routerLink="/">Meu Campeonato</a>
      
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="!authenticated">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/login">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/register">Registro</a>
           </li>
-          
         </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="authenticated">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="/login">Simulação</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="/register">Histórico</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" [routerLink]="['/login']" routerLinkActive="router-link-active"  (click)="logout()">Logout</a>
+              </li>
+          </ul>
       </div>
     </div>
   </nav>
