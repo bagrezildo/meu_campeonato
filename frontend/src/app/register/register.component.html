@@ -1,0 +1,10 @@
+<form [formGroup]="form" (submit)="submit()">
+    <h1 class="h3 mb-3 fw-normal">Criar conta</h1>
+
+      <input formControlName="name" class="form-control"  placeholder="Name" required>
+      <input formControlName="email" type="email" class="form-control"  placeholder="name@example.com" required>
+
+      <input formControlName="password" type="password" class="form-control"  placeholder="Password" required>
+      
+    <button class="btn btn-primary w-100 py-2" type="submit">Registrar</button>
+  </form>
