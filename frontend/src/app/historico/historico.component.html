@@ -1,1 +1,92 @@
-<p>historico works!</p>
+<div class="alert alert-danger" role="alert" style="text-align: center;" *ngIf="!authenticated">
+    <p>{{message}}</p>
+    <a [routerLink]="['/login']" routerLinkActive="router-link-active"  class="alert-link">Clique aqui para logar</a>
+</div>
+
+<div class="justify-content-center" *ngIf="authenticated" style="padding-left: 3%;">
+    <p>Histórico de Campeonatos</p>
+  <!--  <div class="card" *ngFor="let campeonato of campeonatos">
+        <div class="card-body" >
+          {{campeonato.name}} - {{campeonato.id}}
+        </div>
+    </div>-->
+
+   
+    <div *ngFor="let campeonatoId of resultados | keyvalue">
+      <div class="card-body" >
+        <label class="btn btn-outline-primary d-block justify-content-start text-primary mb-2" > Campeonato {{ campeonatoId.key }}</label>
+      </div>
+      <div class="row">
+        <div class="card col-md-3 d-flex align-items-center" >
+          <p class="text-center">Quartas de Final</p>
+          <div *ngFor="let partida of campeonatoId.value">
+              <div class="card-body" *ngIf="partida.fase == 'Quartas de Final'">
+                  <div class="justify-content-center">
+                      <p>{{partida.time_casa}}: {{partida.gols_time_casa}}</p>
+                      <p>{{partida.time_visitante}}: {{partida.gols_time_visitante}}</p>
+                  </div>
+                  <div class="justify-content-center">
+                      <p class="badge text-bg-success">{{partida.nome_vencedor}}</p>
+                  </div>
+                  <hr>
+              </div>
+          </div>
+        </div>
+
+        <div class="card col-md-3 d-flex align-items-center" >
+          <p class="text-center">Semifinais</p>
+          <div *ngFor="let partida of campeonatoId.value">
+              <div class="card-body" *ngIf="partida.fase == 'Semifinal'">
+                  <div class="justify-content-center">
+                      <p>{{partida.time_casa}}: {{partida.gols_time_casa}}</p>
+                      <p>{{partida.time_visitante}}: {{partida.gols_time_visitante}}</p>
+                  </div>
+                  <div class="justify-content-center">
+                      <p class="badge text-bg-success">{{partida.nome_vencedor}}</p>
+                  </div>
+                  <hr>
+              </div>
+          </div>
+        </div>
+
+        <div class="card col-md-3 d-flex align-items-center" >
+          <p class="text-center">Terceiro Lugar</p>
+          <div *ngFor="let partida of campeonatoId.value">
+              <div class="card-body" *ngIf="partida.fase == 'Terceiro Lugar'">
+                  <div class="justify-content-center">
+                      <p>{{partida.time_casa}}: {{partida.gols_time_casa}}</p>
+                      <p>{{partida.time_visitante}}: {{partida.gols_time_visitante}}</p>
+                  </div>
+                  <div class="justify-content-center">
+                      <p class="badge text-bg-success">{{partida.nome_vencedor}}</p>
+                  </div>
+                  <hr>
+              </div>
+          </div>
+        </div>
+
+        <div class="card col-md-3 d-flex align-items-center" >
+          <p class="text-center">Final</p>
+          <div *ngFor="let partida of campeonatoId.value">
+              <div class="card-body" *ngIf="partida.fase == 'Final'">
+                  <div class="justify-content-center">
+                      <p>{{partida.time_casa}}: {{partida.gols_time_casa}}</p>
+                      <p>{{partida.time_visitante}}: {{partida.gols_time_visitante}}</p>
+                  </div>
+                  <div class="justify-content-center">
+                      <p class="badge text-bg-success">{{partida.nome_vencedor}}</p>
+                  </div>
+                  <hr>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+  
+
+
+</div>
+
