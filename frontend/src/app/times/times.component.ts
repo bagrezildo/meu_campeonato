@@ -72,8 +72,9 @@ export class TimesComponent implements OnInit {
   async confirmarSelecao(): Promise<void> {
     try{
       if(this.timesSelecionados.length !== 8){
-        console.warn('Selecione exatamente 8 times.');
+       // console.warn('Selecione exatamente 8 times.');
         this.menosde8 = true;
+        this.maisde8 = false;
         this.message = 'Você precisa selecionar 8 times.';
         return;
       }
@@ -117,7 +118,7 @@ export class TimesComponent implements OnInit {
       this.semis = this.resultado.map((partida: any) => partida.fase === 'Semifinal');
       this.terceiro = this.resultado.map((partida: any) => partida.fase === 'Terceiro Lugar');
       this.final = this.resultado.map((partida: any) => partida.fase === 'Final');
-      //console.log('Resultado do campeonato', resultado);
+      console.log('Resultado do campeonato', resultado);
         this.gerandoCampeonato = false;
     } catch (error) {
       console.error('Erro ao criar o campeonato:', error);
@@ -149,7 +150,7 @@ export class TimesComponent implements OnInit {
     // Aguarda todas as partidas da fase serem concluídas
     await Promise.all(partidas.map( async (partida) => await partida));
     console.log('Partidas da fase ' + faseId + ' concluídas.');
-    console.log('Partidas', partidas);
+    //console.log('Partidas', partidas);
 
     const vencedoresPromise = partidas.map((partida: any) => this.timesService.buscaTime(partida.vencedor_id).toPromise());
     const perdedoresPromise = partidas.map((partida: any) => this.timesService.buscaTime(partida.perdedor_id).toPromise());

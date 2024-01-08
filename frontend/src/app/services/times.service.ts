@@ -54,8 +54,6 @@ export class TimesService {
       time_visitante_id: time_visitante_id,
       fase_id: fase_id,
     }
-    console.log(`Vou simular a partida ${partida.time_casa_id} x ${partida.time_visitante_id} da fase ${partida.fase_id} do campeonato ${partida.campeonato_id}`);
-    console.log('Partida: ', partida);
     return this.http.post(this.url + '/criaPartida', partida, {... this.httpOptions,withCredentials: true});
 
   }
