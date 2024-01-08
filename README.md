@@ -1,7 +1,7 @@
 # meu_campeonato
 simulador de campeonatos de futebol
 
-# Executando o projeto
+## Executando o projeto
 
 Para executar esse projeto você deve primeiro em seu terminal, clonar o repositório e entrar na pasta.
 ```
