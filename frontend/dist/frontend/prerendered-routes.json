@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/",
+    "/campeonato",
+    "/criaTime",
+    "/historico",
+    "/login",
+    "/register"
+  ]
+}
