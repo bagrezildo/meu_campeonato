@@ -1,0 +1,11 @@
+
+  <main class="form-signin w-100 m-auto">
+    <form [formGroup]="time" (submit)="registraTime()">
+        <p class=" mb-3 fw-normal">Cadastrar Time</p>
+  
+        <input formControlName="name" class="form-control"  placeholder="Name" required>
+          
+          
+        <button class="btn btn-outline-primary w-100 py-2" type="submit">Adicionar</button>
+    </form>
+  </main>
