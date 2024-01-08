@@ -11,6 +11,9 @@ import { HistoricoComponent } from './historico/historico.component';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TimesComponent } from './times/times.component';
+import { RegistraTimeComponent } from './registra-time/registra-time.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     HomeComponent,
     HistoricoComponent,
-    NavComponent
+    NavComponent,
+    TimesComponent,
+    RegistraTimeComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
