@@ -1,1 +1,11 @@
-<p>{{message}}</p>
+<div class="container-fluid">
+  <div class="row">
+      
+      <div class="main-content" *ngIf="authenticated" >
+            <app-times></app-times>
+      </div>
+      <div class="main-content" *ngIf="!authenticated">
+        <app-login></app-login>
+      </div>
+  </div>
+</div>
