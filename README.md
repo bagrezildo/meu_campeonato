@@ -17,14 +17,14 @@ Você deve estar com o servidor php e do banco de dados relacional funcionando. 
 Execute os seguintes comandos no terminal dentro da pasta meu_campeonato, para instalar as dependencias:
 ```
 cd backend
-composer installer
+composer install
 composer require jetstream
 composer require tymon/jwt-auth
 php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
 ```
 cd backend
 composer installer
-composer require jetstream
+composer require laravel/jetstream
 composer require tymon/jwt-auth
 php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
 
