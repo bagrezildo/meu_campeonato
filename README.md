@@ -24,7 +24,7 @@ Execute os seguintes comandos no terminal dentro da pasta meu_campeonato, para i
 ```
 cd backend
 composer install
-composer require jetstream
+composer require larave/jetstream
 composer require tymon/jwt-auth
 php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
 ```
