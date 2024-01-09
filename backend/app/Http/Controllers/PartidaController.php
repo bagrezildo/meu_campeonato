@@ -11,7 +11,7 @@ class PartidaController extends Controller
     //
     public function jogar(){
 
-        $caminhoScript = "/Users/matheus/Documents/projects/trade/meu_campeonato/teste.py";
+        $caminhoScript = "../../teste.py";
 
         $output = null;
         $retorno = null;
