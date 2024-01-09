@@ -1,6 +1,12 @@
 # meu_campeonato
 simulador de campeonatos de futebol
 
+## Requisitos
+PHP
+Composer
+Angular
+Python 3
+
 ## Executando o projeto
 
 Para executar esse projeto você deve primeiro em seu terminal, clonar o repositório e entrar na pasta.
