@@ -42,8 +42,7 @@ cp .env.example .env
 Com o banco de dados configurado, execute as migrações, as inserções e incie o servidor:
 ```
 php artisan migrate:refresh
-php artisan db:seed --class=TimesSeeder
-php artisan db:seed --class=FasesSeeder
+php artisan db:seed --class=DatabaseSeeder
 
 php artisan serve
 ```
@@ -52,7 +51,7 @@ Agora, em uma nova instância do terminal, vamos instalar as dependencias do Ang
 
 ```
 npm install
-np serve
+ng serve
 ```
 
 Pronto! Basta acessar http://localhost:4200/ no seu navegador para abrir o projeto.
