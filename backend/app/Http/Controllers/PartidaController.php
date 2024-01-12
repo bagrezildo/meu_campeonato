@@ -11,21 +11,38 @@ class PartidaController extends Controller
     //
     public function jogar(){
 
-        $caminhoScript = "../../teste.py";
+        $python = null;
+        $python3 = null;
+        $out = [null, null];
 
-        $output = null;
-        $retorno = null;
+        exec("python --version", $python, $retorno);
+        exec("python3 --version", $python3, $retorno);
 
-        exec("python3 {$caminhoScript}", $output, $retorno);
-        $out = shell_exec("python3 {$caminhoScript}");
-        if($retorno === 0 && count($output) === 2){
-            $numero1 = (int)$output[0];
-            $numero2 = (int)$output[1];
+        if (($python ==0) || ($python3 == 0)){
 
-            return ['gols_time_casa' => $numero1, 'gols_time_visitante' => $numero2];
+            $caminhoScript = "backend/app/Http/Controllers/teste.py";
 
+            $output = null;
+            $retorno = null;
+
+            exec("python3 {$caminhoScript}", $output, $retorno);
+            $out = shell_exec("python3 {$caminhoScript}");
+            if($retorno === 0 && count($output) === 2){
+                $gols_time_casa = (int)$output[0];
+                $gols_time_visitante = (int)$output[1];
+
+                return ['gols_time_casa' => $gols_time_casa, 'gols_time_visitante' => $gols_time_visitante];
+
+            }else{
+                return response()->json(['erro' => 'Erro ao executar o script.', 'retorno'=> $retorno, 'output'=>$output, 'out'=>$out], 500);
+            }
         }else{
-            return response()->json(['erro' => 'Erro ao executar o script.', 'retorno'=> $retorno, 'output'=>$output, 'out'=>$out], 500);
+            //echo "Python não instalado";
+
+            $gols_time_casa = rand(0,8);
+            $gols_time_visitante = rand(0,8);
+
+            return ['gols_time_casa' => $gols_time_casa, 'gols_time_visitante' => $gols_time_visitante];
         }
 
     }
